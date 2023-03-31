@@ -1,0 +1,53 @@
+{% extends "memo_board/base.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Список заметок{% endblock %}
+
+{% block content %}
+
+<div class="create-note">
+    <a class="create-note" href="{% url 'note_create' %}">Добавить заметку</a>
+</div>
+<br>
+
+<div class="row">
+    {% if notes_list %}
+    {% for note in notes_list %}
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="card">
+                    <div class="created_at">Время создания - {{ note.created_at|date:"d-m-Y в H:i" }}</div>
+                    <div class="user">Автор заметки - {{ note.user }}</div>
+                    <div class="title">Наименование заметки - {{ note.title }}</div>
+                    <div class="text">Заметка: <br> {{ note.text }}</div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                {% if user.is_authenticated and user == note.user %}
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">
+                        &equiv;
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'note_edit' note.id %}" class='dropdown-item'>Изменить</a></li>
+                        <li><a href="{% url 'note_delete' note.id %}"
+                               onclick="return confirm('Вы уверены, что хотите удалить этот элемент?');"
+                               class='dropdown-item'>Удалить</a></li>
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+    {% else %}
+    <h2 class="no_notes">Заметок нет.</h2>
+    {% endif %}
+
+</div>
+
+{% endblock %}
