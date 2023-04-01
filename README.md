@@ -4,7 +4,9 @@
 ## Installation
 ### To get started with Scheduler, you'll need to perform the following steps:
 1. Clone the repository to your local machine:
+```
 git clone https://github.com/Sharpylo/scheduler.git
+```
 2. Create a virtual environment:
 python -m venv venv
 3. Activate the virtual environment:
