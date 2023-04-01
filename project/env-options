@@ -1,0 +1,6 @@
+SECRET_KEY=your secret key
+DEBUG=True or False
+MYSQL_NAME=MySQL database name
+MYSQL_USER=MySQL username
+MYSQL_PASSWORD=Your password
+MYSQL_HOST=localhost or other host
