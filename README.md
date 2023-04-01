@@ -8,19 +8,31 @@
 git clone https://github.com/Sharpylo/scheduler.git
 ```
 2. Create a virtual environment:
+```
 python -m venv venv
+```
 3. Activate the virtual environment:
+```
 venv/Scripts/activate
+```
 4. Install the dependencies:
+```
 pip install -r requirements.txt
+```
 5. Navigate into the project directory:
+```
 cd scheduler
+```
 6. Create a new MySQL database and configure the parameters in the .env file using the env-options file
 7. Create the database:
+```
 python manage.py migrate
+```
 8. Run the development server:
+```
 python manage.py runserver
-9. Open your web browser and navigate to http://localhost:8000 to access the application.
+```
+9. Open your web browser and navigate to ```http://localhost:8000``` to access the application.
 
 ## Features
 ### Project Scheduler includes the following features:
@@ -39,6 +51,8 @@ python manage.py runserver
 
 ## Testing
 ### Scheduler includes unit tests for views, models, and forms. To run the tests, use the following command:
+```
 python manage.py test
+```
 
 
