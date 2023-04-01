@@ -4,12 +4,12 @@
 
 {% block content %}
 
-<p class="no_films">Настройки учетной записи</p>
+<p class="text-label">Настройки учетной записи</p>
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="row">
         <div class="col-md-4 pics">
-            <div class="my-card">
+            <div class="card">
                 <div class="card-body">
                     <img class="rounded-circle account-img mb-3" src="{{ user.profile.image.url }}">
                     <div class="form-group">
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="col-md-8 prof">
-            <div class="my-card">
+            <div class="card">
                 <div class="card-body">
                     {{ u_form.as_p }}
                     {{ p_form.bio.label_tag }}

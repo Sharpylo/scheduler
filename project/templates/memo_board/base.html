@@ -21,6 +21,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'notes_list' %}">Список заметок</a>
                     </li>
+                    {% if user.username %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' username=user.username %}"
+                           class="text-decoration-none text-reset">Профиль</a>
+                    </li>
+                    {% endif %}
                 </ul>
                 <div class="d-flex flex-row-reverse">
                     <ul class="list-group d-flex">

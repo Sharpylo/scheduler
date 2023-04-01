@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponseForbidden, HttpResponse
 from django.shortcuts import render, reverse, get_object_or_404
 
@@ -5,6 +6,7 @@ from .models import Note
 from .forms import NoteForm
 
 
+@login_required
 def note_create(request):
     if request.method == "POST":
         form = NoteForm(request.POST)
@@ -18,6 +20,7 @@ def note_create(request):
     return render(request, 'memo_board/note_create.html', {'form': form})
 
 
+@login_required
 def note_edit(request, item_id):
     note = get_object_or_404(Note, id=item_id)
     if not note.can_edit(request.user):
@@ -29,6 +32,7 @@ def note_edit(request, item_id):
     return render(request, 'memo_board/note_edit.html', {'form': form})
 
 
+@login_required
 def note_delete(request, item_id):
     try:
         note = Note.objects.get(pk=item_id)
@@ -40,6 +44,7 @@ def note_delete(request, item_id):
         return HttpResponse('Заметка не существует', status=404)
 
 
+@login_required
 def notes_list(request):
     notes_list = Note.objects.all().order_by('-user')
     context = {'notes_list': notes_list}
