@@ -7,13 +7,9 @@
 ```
 git clone https://github.com/Sharpylo/scheduler.git
 ```
-2. Create a virtual environment:
-```
-python -m venv venv
-```
 3. Activate the virtual environment:
 ```
-venv/Scripts/activate
+myvenv/Scripts/activate
 ```
 4. Install the dependencies:
 ```
@@ -21,7 +17,7 @@ pip install -r requirements.txt
 ```
 5. Navigate into the project directory:
 ```
-cd scheduler
+cd project
 ```
 6. Create a new MySQL database and configure the parameters in the .env file using the env-options file
 7. Create the database:
