@@ -32,6 +32,7 @@ python manage.py runserver
 
 ## Testing
 ### Scheduler includes unit tests for views, models, and forms. To run the tests, use the following command:
+
 ```
 python manage.py test
 ```
