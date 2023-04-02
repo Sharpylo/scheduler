@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ```
 cd project
 ```
-6. Create a new MySQL database and configure the parameters in the .env file using the env-options file
+6. ** Create a new MySQL database and configure the parameters in the .env file using the env-options file (bold)**
 7. Create the database:
 ```
 python manage.py migrate
@@ -29,6 +29,12 @@ python manage.py migrate
 python manage.py runserver
 ```
 9. Open your web browser and navigate to ```http://localhost:8000``` to access the application.
+
+## Testing
+### Scheduler includes unit tests for views, models, and forms. To run the tests, use the following command:
+```
+python manage.py test
+```
 
 ## Features
 ### Project Scheduler includes the following features:
@@ -45,10 +51,6 @@ python manage.py runserver
 - Delete notes that are no longer relevant.
 - You can also update your profile information at any time via the profile settings in the top bar
 
-## Testing
-### Scheduler includes unit tests for views, models, and forms. To run the tests, use the following command:
-```
-python manage.py test
-```
+
 
 
