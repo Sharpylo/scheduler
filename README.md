@@ -9,7 +9,7 @@ git clone https://github.com/Sharpylo/scheduler.git
 ```
 3. Activate the virtual environment:
 ```
-myvenv/Scripts/activate
+myvenv\Scripts\activate
 ```
 4. Install the dependencies:
 ```
