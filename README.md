@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ```
 cd project
 ```
-6. ** Create a new MySQL database and configure the parameters in the .env file using the env-options file (bold)**
+6. 'Create a new MySQL database and configure the parameters in the .env file using the env-options file'
 7. Create the database:
 ```
 python manage.py migrate
