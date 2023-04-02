@@ -8,7 +8,7 @@ class Profile(models.Model):
     bio = models.TextField(verbose_name='О себе', max_length=500, null=True, blank=True)
     phone_number = models.CharField(verbose_name='Номер телефона', max_length=20, null=True, blank=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.user.username} Profile'
 
     class Meta:

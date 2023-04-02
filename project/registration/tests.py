@@ -19,7 +19,7 @@ class RegisterFormTest(TestCase):
         }
         self.invalid_data = {
             'username': '',
-            'email': 'invalidemail',  # This field should be a valid email
+            'email': 'invalidemail',
             'password1': 'weak',
             'password2': 'weaker',
         }
@@ -52,7 +52,7 @@ class SignUpViewTest(TestCase):
 
     def test_sign_up_with_valid_data(self):
         response = self.client.post(self.url, data=self.valid_data)
-        self.assertEqual(response.status_code, 302)  # Redirects to home page
+        self.assertEqual(response.status_code, 302)
         self.assertTrue(User.objects.filter(username='testuser').exists())
         self.assertTrue(response.wsgi_request.user.is_authenticated)
 

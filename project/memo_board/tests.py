@@ -18,16 +18,13 @@ class NoteTestCase(TestCase):
             user=self.user)
 
     def test_can_edit(self):
-        # Test that the owner of the note can edit it
         self.assertTrue(self.note.can_edit(self.user))
 
-        # Test that a different user cannot edit the note
         other_user = User.objects.create_user(
             username='otheruser', password='password456')
         self.assertFalse(self.note.can_edit(other_user))
 
     def test_str(self):
-        # Test that the string representation of the note is its title
         self.assertEqual(str(self.note), 'Test Note')
 
 
